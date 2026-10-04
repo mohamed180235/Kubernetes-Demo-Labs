@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: env-pod
+spec:
+  containers:
+    - name: app
+      image: busybox:1.36
+      command:
+        - sh
+        - -c
+        - |
+          echo "Application started"
+          sleep 3600
+      env:
+        - name: APP_ENV
+          value: "development"
+        - name: APP_VERSION
+          value: "1.0"
